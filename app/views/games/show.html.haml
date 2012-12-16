@@ -5,19 +5,12 @@
   = @game.started_at.strftime("%d %b %Y")
 
 .row
-  .span5.well
-    %h3= @game.teams.first.name
-    %ul.unstyled
-      - @game.teams.first.players.each do |player|
-        %li= player.name
-  .span5.well
-    %h3= @game.teams.last.name
-    %ul.unstyled
-      - @game.teams.last.players.each do |player|
-        %li= player.name
-
-
-
+  - @game.teams.each do |team|
+    .span5.well
+      %h3= team.name
+      %ul.unstyled
+        - team.players.each do |player|
+          %li= player.name
 
 = link_to 'Edit', edit_game_path(@game)
 \|
