@@ -1,0 +1,24 @@
+%h1 Here are the teams!!!
+
+%p
+  %b Started:
+  = @game.started_at.strftime("%d %b %Y")
+
+.row
+  .span5.well
+    %h3= @game.teams.first.name
+    %ul.unstyled
+      - @game.teams.first.players.each do |player|
+        %li= player.name
+  .span5.well
+    %h3= @game.teams.last.name
+    %ul.unstyled
+      - @game.teams.last.players.each do |player|
+        %li= player.name
+
+
+
+
+= link_to 'Edit', edit_game_path(@game)
+\|
+= link_to 'Back', games_path

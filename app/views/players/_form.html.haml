@@ -1,0 +1,8 @@
+= simple_form_for @player do |f|
+
+  .field
+    = f.input :name, input_html: { class: 'focus-here' }
+  .field
+    = f.input :birthday, :as => :string, input_html: { class: 'datepicker' }    
+  .actions
+    = f.button :submit, 'Create player', class: 'btn btn-success'

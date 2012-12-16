@@ -1,0 +1,2 @@
+jQuery ->
+  $('.focus-here').focus()

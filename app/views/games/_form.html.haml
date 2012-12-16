@@ -1,0 +1,11 @@
+= simple_form_for @game do |f|
+
+  .field
+    - if @game.started_at.nil?
+      - date = Date.today.strftime("%Y-%m-%d")
+    - else
+      - date = @game.started_at
+    = f.hidden_field :started_at, value: date
+  .actions
+    = f.button :submit, 'New Game', class: 'btn btn-success btn-large'
+    
